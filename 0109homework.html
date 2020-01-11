@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+
     <!-- Webpage Title -->
     <title>샌프란시스코 항공권 판매</title>
 
@@ -19,10 +21,63 @@
 
     <style>
 
+        *{
+
+            font-family: 'Jua', sans-serif;
+        }
+
+        .maintext{
+
+            margin: 30px;
+
+        }
+
+
         .main_img{
 
             text-align: center;
             margin: 50px auto 30px auto;
+
+        }
+
+
+        .large_font{
+
+            font-size: 20px;
+        }
+
+
+        .small_font{
+
+            font-size: 10px;
+        }
+
+
+        .form{
+
+            margin: 30px 20px;
+
+        }
+
+        .col-auto{
+
+            width: 300px;
+        }
+
+
+        .form-control{
+
+            width: 200px;
+        }
+
+
+        .btn-primary{
+
+            width: 300px;
+            border-radius: 5px;
+            height: 40px;
+            margin: auto
+
 
         }
 
@@ -39,11 +94,70 @@
     </div>
 
     <div class="maintext">
-        <h1> 샌프란시스코 항공권 판매합니다.</h1>
-        <p> 가격: 1,000,000원 / 1인 </p>
-        <p> 올 여름 휴가는 샌프란시스코로 떠나보세요. 1월에만 진행하는 특가로 항공권과 호텔을 모두 제공합니다! 놓치지 마세요!</p>
+        <h1 align="left"> 
+            <span class="large font"> 샌프란시스코 항공권 판매합니다. </span>
+            <span class="small font"> 가격: 1,000,000원 / 1인</span>
+        </h1>
+        <p align="left"> 올 여름 휴가는 샌프란시스코로 떠나보세요. 1월에만 진행하는 특가로 항공권과 호텔을 모두 제공합니다! 아름다운 시가지와 멋진 자연경관, 맛있는 음식! 자유롭고 신비로운 샌프란시스코로 떠나보세요. 이번 특가를 놓치면 엄청나게 후회하실겁니다.</p>
+    </div>
+
+    <form class="form">
+
+        <div class="col-auto">
+            <label class="sr-only" for="inLineFormInputGorup"> </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">이름</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+
+            </div>
+        </div>
+
+
+        <div class="col-auto">
+            <label class="sr-only" for="inLineFormInputGorup"> </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">수량</div>
+                </div>
+                <button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" width="300px"> 
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-auto">
+            <label class="sr-only" for="inLineFormInputGorup"> </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">주소</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+
+            </div>
+        </div>
 
 
 
-    </body>
-    </html>
+        <div class="col-auto">
+            <label class="sr-only" for="inLineFormInputGorup"> </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">전화번호</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+
+            </div>
+        </div>
+
+    </form>
+
+    <div style="text-align:center"> 
+        <button class="btn-primary"> 주문하기 </button>
+    </div>
+
+</body>
+</html>
