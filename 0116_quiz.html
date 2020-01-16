@@ -50,7 +50,7 @@
         $('#domain-q5').hide();
         } else {
         //이메일 제대로 입력했을 때
-        var domain = email.spilt('@')[1].split('.')[0];
+        var domain = email.split('@')[1].split('.')[0];
         $('#domain-q5').text(domain);
         $('#domain-q5').show();
         $('#warning-q5').hide();
