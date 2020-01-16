@@ -19,11 +19,11 @@
     </style>
 
     <script>
-      function q1(){
+      function q1() {
         // 1. input-q1의 입력값을 가져온다.
         let input_value = $('#input-q1').val(); //val는 값을 바꿀 수 있음
         // 2. 만약 입력값이 빈칸이면 if(입력값=='')
-        if (input_value ==' '); {
+        if (input_value =='') {
             alert('입력하세요!');
         }
         // 3. alert('입력하세요!') 띄우기
@@ -41,7 +41,7 @@
       	// 1. input-q5 값을 가져온다.
         let email = $('#input-q5').val();
       	// 2. 만약 가져온 값에 @가 있으면 (indexOf를 이용하기 - 찾아보자!)
-        if (email.index0f('@') == -1 ) {
+        if (email.indexOf('@') == -1 ) {
         //이메일 잘못 입력했을 때  
         // 6. 가져온 값에 @가 없으면
         // 7. warning-q5의 warning 클래스를 이용해서, 글씨를 빨간색으로 바꾼다. (head 안의 <style>~</style>부분을 보세요!)
@@ -51,9 +51,9 @@
         } else {
         //이메일 제대로 입력했을 때
         var domain = email.spilt('@')[1].split('.')[0];
-        $('#domain-q5')text(domain);
-        $('#domain-q5')show();
-        $('#domain-q5')hide();
+        $('#domain-q5').text(domain);
+        $('#domain-q5').show();
+        $('#warning-q5').hide();
         }
 
       	// 3. info.spartacoding@gmail.com -> gmail 만 추출해서
@@ -64,15 +64,17 @@
 
       function q7() {
         let name = $('#input-q7').val();
-        var tem_html = '<li>' + name + '</li>';
-        $('#name-q7').append(temp_html);
+        if (name !='') {
+        var temp_html = '<li>' + name + '</li>';
+        $('#names-q7').append(temp_html);
       	// 1. input-q7 값을 가져온다.
       	// 2. 가져온 값을 이용해 names-q7에 붙일 태그를 만든다. (let temp_html = '<li>임꺽정</li>')
       	// 3. 만들어둔 temp_html을 names-q7에 붙인다.(jQuery의 $('...').append(temp_html)을 이용하면 굿!)
       }
+      }
 
       function q7_remove() {
-        $('#name-q7').empty();
+        $('#names-q7').empty();
       	// 1. names-q7의 내부 태그를 모두 비운다.(jQuery의 $('....').empty()를 이용하면 굿!)
       }
 
