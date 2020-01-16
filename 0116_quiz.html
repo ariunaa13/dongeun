@@ -51,9 +51,9 @@
         } else {
         //이메일 제대로 입력했을 때
         var domain = email.spilt('@')[1].split('.')[0];
-        $('domain-q5')text(domain);
-        $('domain-q5')show();
-        $('domain-q5')hide();
+        $('#domain-q5')text(domain);
+        $('#domain-q5')show();
+        $('#domain-q5')hide();
         }
 
       	// 3. info.spartacoding@gmail.com -> gmail 만 추출해서
@@ -63,12 +63,16 @@
       }
 
       function q7() {
+        let name = $('#input-q7').val();
+        var tem_html = '<li>' + name + '</li>';
+        $('#name-q7').append(temp_html);
       	// 1. input-q7 값을 가져온다.
       	// 2. 가져온 값을 이용해 names-q7에 붙일 태그를 만든다. (let temp_html = '<li>임꺽정</li>')
       	// 3. 만들어둔 temp_html을 names-q7에 붙인다.(jQuery의 $('...').append(temp_html)을 이용하면 굿!)
       }
 
       function q7_remove() {
+        $('#name-q7').empty();
       	// 1. names-q7의 내부 태그를 모두 비운다.(jQuery의 $('....').empty()를 이용하면 굿!)
       }
 
