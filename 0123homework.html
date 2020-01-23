@@ -99,11 +99,19 @@
     <script>
         function blank_check(){
 
+let name = $('#name').val();
 if(document.submit.name.value==""){
     alert("이름을 입력하세요");
     document.submit.name.focus();
     exit;
 }
+else {
+
+    var temp_html = '<li>' + name + '</li>';
+    $('#newname').append(temp_html);
+}
+
+let address = $('#address').val();
 
 if(document.submit.address.value==""){
     alert("주소를 입력하세요");
@@ -111,18 +119,28 @@ if(document.submit.address.value==""){
     exit;
 }
 
+else {
+    var temp_html = '<li>' + address + '</li>';
+    $('#newaddress').append(temp_html);
+}
+
+let phone = $('#phone').val();
+
 if(document.submit.phone.value==""){
 
     alert("전화번호를 입력하세요");
     document.submit.phone.focus();
     exit;
 
+}
 
+else {
+    var temp_html = '<li>' + phone + '</li>';
+    $('#newphone').append(temp_html);
 }
 
 //else if(//여기에 휴대폰 번호를 넣으면?//)
 
-//else(여기에 그걸 넣으면)
 
 }
 
@@ -214,7 +232,7 @@ if(document.submit.phone.value==""){
         <button onclick="blank_check()" class="btn-primary"> 주문하기 </button>
     </div>
 
-<table class="table table-hover">
+<table class="table">
 <thead>
     <tr>
         <th> 이름 </th>
@@ -226,10 +244,10 @@ if(document.submit.phone.value==""){
 
 <tbody>
     <tr>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td id="newname"> </td>
+        <td id="newnumber"> </td>
+        <td id="newaddress"> </td>
+        <td id="newphone"> </td>
     </tr>
 </tbody>
 
