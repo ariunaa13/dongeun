@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+
+    <!-- Webpage Title -->
+    <title>샌프란시스코 항공권 판매</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->		
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+
+        *{
+
+            font-family: 'Jua', sans-serif;
+        }
+
+        .maintext{
+
+            margin: 30px;
+
+        }
+
+
+        .main_img{
+
+            text-align: center;
+            margin: 50px auto 30px auto;
+
+        }
+
+
+        .large_font{
+
+            font-size: 20px;
+        }
+
+
+        .small_font{
+
+            font-size: 10px;
+        }
+
+
+        .form{
+
+            margin: 30px 20px;
+
+        }
+
+        .col-auto{
+
+            width: 300px;
+        }
+
+
+        .form-control{
+
+            width: 200px;
+        }
+
+
+        .btn-primary{
+
+            width: 300px;
+            border-radius: 5px;
+            height: 40px;
+            margin: auto
+
+
+        }
+
+        .dropdownbutton{
+
+            filter: alpha(opacity=100);
+            opacity: 1.0;
+        }
+
+
+
+    </style>
+
+    <script>
+        function blank_check(){
+
+if(document.submit.name.value==""){
+    alert("아이디를 입력하세요");
+    document.submit.name.focus();
+    exit;
+}
+
+if(document.submit.address.value==""){
+    alert("주소를 입력하세요");
+    document.submit.address.focus();
+    exit;
+}
+
+if(document.submit.phone.value==""){
+    alert("전화번호를 입력하세요");
+    document.submit.phone.focus();
+    exit;
+}
+
+
+
+}
+
+    </script>
+
+</head>
+
+
+<body>
+    <div class="main_img">
+
+        <img src="https://wikitravel.org/upload/en/2/23/Us-ca-sanfran-goldengate.jpg" alt="" width="500px" align="center">
+
+    </div>
+
+    <div class="maintext">
+        <h1 align="left"> 
+            <span class="large font"> 샌프란시스코 항공권 판매합니다. </span>
+            <span class="small font"> 가격: 1,000,000원 / 1인</span>
+        </h1>
+        <p align="left"> 올 여름 휴가는 샌프란시스코로 떠나보세요. 1월에만 진행하는 특가로 항공권과 호텔을 모두 제공합니다! 아름다운 시가지와 멋진 자연경관, 맛있는 음식! 자유롭고 신비로운 샌프란시스코로 떠나보세요. 이번 특가를 놓치면 엄청나게 후회하실겁니다.</p>
+    </div>
+
+    <form action="application" name="submit" method="purchase" class="form">
+
+        <div class="col-auto">
+            <label class="sr-only" for="inLineFormInputGorup"> </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">이름</div>
+                </div>
+                <input id="name" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+
+            </div>
+        </div>
+
+
+        <div class="col-auto">
+            <label class="sr-only" for="inLineFormInputGorup"> </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">수량</div>
+                </div>
+
+<div class="dropdownbutton">
+                <a id="number" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    선택하세요
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#"> 1</a>
+                    <a class="dropdown-item" href="#"> 2</a>
+                    <a class="dropdown-item" href="#"> 3</a>
+
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-auto">
+            <label class="sr-only" for="inLineFormInputGorup"> </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">주소</div>
+                </div>
+                <input id="address" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+
+            </div>
+        </div>
+
+
+
+        <div class="col-auto">
+            <label class="sr-only" for="inLineFormInputGorup"> </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">전화번호</div>
+                </div>
+                <input id="phone" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+
+            </div>
+        </div>
+
+    </form>
+
+    <div style="text-align:center"> 
+        <button onclick="blank_check()" class="btn-primary"> 주문하기 </button>
+    </div>
+
+</body>
+</html>
