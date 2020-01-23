@@ -87,7 +87,12 @@
             opacity: 1.0;
         }
 
+.table {
+            text-align: center;
+            width: 700px;
+            margin: 50px auto 30px auto;
 
+}
 
     </style>
 
@@ -95,7 +100,7 @@
         function blank_check(){
 
 if(document.submit.name.value==""){
-    alert("아이디를 입력하세요");
+    alert("이름을 입력하세요");
     document.submit.name.focus();
     exit;
 }
@@ -107,14 +112,20 @@ if(document.submit.address.value==""){
 }
 
 if(document.submit.phone.value==""){
+
     alert("전화번호를 입력하세요");
     document.submit.phone.focus();
     exit;
+
+
 }
 
+//else if(//여기에 휴대폰 번호를 넣으면?//)
 
+//else(여기에 그걸 넣으면)
 
 }
+
 
     </script>
 
@@ -202,6 +213,29 @@ if(document.submit.phone.value==""){
     <div style="text-align:center"> 
         <button onclick="blank_check()" class="btn-primary"> 주문하기 </button>
     </div>
+
+<table class="table table-hover">
+<thead>
+    <tr>
+        <th> 이름 </th>
+        <th> 수량 </th>
+        <th> 주소 </th>
+        <th> 전화번호 </th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+</tbody>
+
+
+</table>
+
 
 </body>
 </html>
