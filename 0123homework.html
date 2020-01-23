@@ -94,6 +94,9 @@
 
         }
 
+
+
+
     </style>
 
     <script>
@@ -110,9 +113,16 @@
                 var temp_html = '<li>' + name + '</li>';
                 $('#newname').append(temp_html);
             }
+//이름 끝//
+
+let number = $(document).on("click","dropdown-item",function(){var a = $(this).text();console.log(a);});
 
 
 
+
+
+
+//주소//
             let address = $('#address').val();
 
             if(document.submit.address.value==""){
@@ -127,8 +137,6 @@
             }
 
 
-
-            //예전꺼 let phone = $('#phone').val();
             var phone =$('#phone').val();
             var phonecheck = /(01[0|1|6|9|7])[-](\d{3}|\d{4})[-](\d{4}$)/g;
 
@@ -143,15 +151,14 @@
             else if(!phonecheck.test(phone)) {
 
                 alert('잘못된 휴대폰 번호입니다. 010-0000-0000으로 입력하세요');
+                document.submit.phone.focus();
+                exit;
             }
 
             else {
                 var temp_html = '<li>' + phone + '</li>';
                 $('#newphone').append(temp_html);
             }
-
-//else if(//여기에 휴대폰 번호를 넣으면?//)
-
 
 }
 
@@ -197,17 +204,20 @@
                     <div class="input-group-text">수량</div>
                 </div>
 
-                <div class="dropdownbutton">
-                    <a id="number" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <div class="dropdownbutton">
+                    <a id="number" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         선택하세요
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#"> 1</a>
-                        <a class="dropdown-item" href="#"> 2</a>
-                        <a class="dropdown-item" href="#"> 3</a>
+                        <li class="dropdown-item" href="#"> 1</li>
+                        <li class="dropdown-item" href="#"> 2</li>
+                         <li class="dropdown-item" href="#"> 3</li>
 
                     </div>
                 </div>
+
+
             </div>
 
         </div>
