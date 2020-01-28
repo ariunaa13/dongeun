@@ -29,6 +29,7 @@
         .maintext{
 
             margin: 30px;
+            text-align: center;
 
         }
 
@@ -102,12 +103,18 @@
     <script>
         function blank_check(){
 
+
+
             let name = $('#name').val();
+            
+
             if(document.submit.name.value==""){
                 alert("이름을 입력하세요");
                 document.submit.name.focus();
                 exit;
-            }
+                }
+
+
             else {
 
                 var temp_html = '<li>' + name + '</li>';
@@ -115,12 +122,7 @@
             }
 //이름 끝//
 
-let number = $(document).on("click","dropdown-item",function(){var a = $(this).text();console.log(a);});
-
-
-
-
-
+            
 
 //주소//
             let address = $('#address').val();
@@ -160,7 +162,12 @@ let number = $(document).on("click","dropdown-item",function(){var a = $(this).t
                 $('#newphone').append(temp_html);
             }
 
-}
+            }
+
+            function change_dropdown(element) {
+                selected_value = $(element).text();
+                $('#selected').text(selected_value);
+            }
 
 
 </script>
@@ -176,104 +183,118 @@ let number = $(document).on("click","dropdown-item",function(){var a = $(this).t
     </div>
 
     <div class="maintext">
-        <h1 align="left"> 
+        <h1> 
             <span class="large font"> 샌프란시스코 항공권 판매합니다. </span>
             <span class="small font"> 가격: 1,000,000원 / 1인</span>
         </h1>
-        <p align="left"> 올 여름 휴가는 샌프란시스코로 떠나보세요. 1월에만 진행하는 특가로 항공권과 호텔을 모두 제공합니다! 아름다운 시가지와 멋진 자연경관, 맛있는 음식! 자유롭고 신비로운 샌프란시스코로 떠나보세요. 이번 특가를 놓치면 엄청나게 후회하실겁니다.</p>
+        <p> 올 여름 휴가는 샌프란시스코로 떠나보세요. 1월에만 진행하는 특가로 항공권과 호텔을 모두 제공합니다! 아름다운 시가지와 멋진 자연경관, 맛있는 음식! 자유롭고 신비로운 샌프란시스코로 떠나보세요. 이번 특가를 놓치면 엄청나게 후회하실겁니다.</p>
     </div>
 
-    <form action="application" name="submit" method="purchase" class="form">
+    <div class="purchase_form" align="center">
+        <form action="application" name="submit" method="purchase" class="form">
 
-        <div class="col-auto">
-            <label class="sr-only" for="inLineFormInputGorup"> </label>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">이름</div>
+            <div class="col-auto">
+                <label class="sr-only" for="inLineFormInputGorup"> </label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">이름</div>
+                    </div>
+                    <input id="name" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+
                 </div>
-                <input id="name" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
-
             </div>
-        </div>
 
 
-        <div class="col-auto">
-            <label class="sr-only" for="inLineFormInputGorup"> </label>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">수량</div>
-                </div>
+            <div class="col-auto">
+                <label class="sr-only" for="inLineFormInputGorup"> </label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">수량</div>
+                    </div>
 
 
                     <div class="dropdownbutton">
-                    <a id="number" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        선택하세요
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li class="dropdown-item" href="#"> 1</li>
-                        <li class="dropdown-item" href="#"> 2</li>
-                         <li class="dropdown-item" href="#"> 3</li>
-
+                        <a id="number" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="selected">선택하세요</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#" onclick="change_dropdown(this)"> 1</a>
+                            <a class="dropdown-item" href="#" onclick="change_dropdown(this)"> 2</a>
+                            <a class="dropdown-item" href="#" onclick="change_dropdown(this)"> 3</a>
+                        </div>
                     </div>
-                </div>
+
+<!-- <div class="dropdownbutton">
+<a id="number" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+선택하세요
+</a>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+<li class="dropdown-item" href="#"> 1</li>
+<li class="dropdown-item" href="#"> 2</li>
+<li class="dropdown-item" href="#"> 3</li>
+
+</div>
+</div> -->
 
 
-            </div>
+</div>
 
+</div>
+
+
+<div class="col-auto">
+    <label class="sr-only" for="inLineFormInputGorup"> </label>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text">주소</div>
         </div>
+        <input id="address" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
 
-
-        <div class="col-auto">
-            <label class="sr-only" for="inLineFormInputGorup"> </label>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">주소</div>
-                </div>
-                <input id="address" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
-
-            </div>
-        </div>
-
-
-
-        <div class="col-auto">
-            <label class="sr-only" for="inLineFormInputGorup"> </label>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">전화번호</div>
-                </div>
-                <input id="phone" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
-
-            </div>
-        </div>
-
-    </form>
-
-    <div style="text-align:center"> 
-        <button onclick="blank_check()" class="btn-primary"> 주문하기 </button>
     </div>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th> 이름 </th>
-                <th> 수량 </th>
-                <th> 주소 </th>
-                <th> 전화번호 </th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td id="newname"> </td>
-                <td id="newnumber"> </td>
-                <td id="newaddress"> </td>
-                <td id="newphone"> </td>
-            </tr>
-        </tbody>
+</div>
 
 
-    </table>
+
+<div class="col-auto">
+    <label class="sr-only" for="inLineFormInputGorup"> </label>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text">전화번호</div>
+        </div>
+        <input id="phone" type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+
+    </div>
+</div>
+
+</form>
+
+</div>
+
+<div style="text-align:center"> 
+    <button onclick="blank_check()" class="btn-primary"> 주문하기 </button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> 이름 </th>
+            <th> 수량 </th>
+            <th> 주소 </th>
+            <th> 전화번호 </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td id="newname"> </td>
+            <td id="newnumber"> </td>
+            <td id="newaddress"> </td>
+            <td id="newphone"> </td>
+        </tr>
+    </tbody>
+
+
+</table>
 
 
 </body>
