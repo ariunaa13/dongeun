@@ -19,31 +19,23 @@
     <script>
       function q1() {
 
-        let cat_img = $('#img-cat')
-        cat_img.empty();
+      $.ajax({
+        type: 'GET',
+        url: 'https://api.thecatapi.com/v1/images/search',
+        data: {},
+        success: function(response){
 
-        $.ajax({
-          type: 'GET',
-          url: 'https://api.thecatapi.com/v1/images/search',
-          data: {},
-          success: function(response){
-
-            var image = response ['url'];
-            var html = attr('url');
-          }
-          //cat_img.append(html);
-            //var img = attr('url');
+         var cat_url = response [0]['url']
+         $('#img-cat').attr('src',cat_url); 
+        }
 
 
+      })
 
-
-          }
-
-
-        })
+        }
 
         // 여기에 코드를 입력하세요
-      }
+  
     </script>
 
   </head>
