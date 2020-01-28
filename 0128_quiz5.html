@@ -48,18 +48,33 @@
     <script>
       function q1() {
         let keyword = $('#input-keyword').val();
-        if (keyword == '') {
+        if (keyword.trim() == '') { //trim은 스페이스가 있을 경우에도 잡아내는 기능
           alert('키워드를 입력하세요!')
           return;
         }
 
-        let result = $('#news').val();
+      $('#news').empty();
 
       $.ajax({
         type: 'GET',
-        url: 'https://newsapi.org/v2/everything?q=' + keyword + '&apiKey=' + '5d6c1a1d4c0d4de1a60bc34087bb8655',
+        url: 'https://newsapi.org/v2/everything?q=' + keyword + '&apiKey=5d6c1a1d4c0d4de1a60bc34087bb8655',
         data: {},
-        success: function(response){
+        success: function(response) {
+
+          let articles = response['articles'];
+          for(let i = 0; i < articles.length; i++) {
+            var html = '<div>\
+                          <img src="' + articles[i]['urlToImage'] + '" width = "100%">\
+                          <div class="title-box">\
+                            <a href="' + articles[i]['url'] + ' " target="_blank">' + articles[i]['title'] + '</a>\
+                            <h5>' + articles[i]['publishedAt'] + ' | ' + articles[i]['author']+' </h5> \
+                        </div> \
+                           <p> ' +articles[i]['description'] + '</p> \
+                       </div>'
+          }
+
+
+$('#news').append(html);
 
         
 
@@ -85,14 +100,7 @@
     </div>
     <hr/>
     <div class="newsbox" id="news">
-      <div>
-        <img src="http://www.bloter.net/wp-content/uploads/2019/10/191029_pr-11st-apple-music2.png" width="100%">
-        <div class="title-box">
-        <a href="https://naver.com/" target="_blank">11번가, 애플뮤직 7개월 무료 이용 혜택 제공 나서</a>
-        <h5>2019-10-29T17:15:00Z | 글쓴이 </h5>
-        </div>
-        <p>여기에 기사 내용이 들어갑니다. 이 칸을 복사해서 Jquery로 html append 하는 데 쓰면 되겠죠? CSS는 추가/수정 할 필요 업습니다!</p>
-      </div>
+      
     </div>
   </body>
 </html>
