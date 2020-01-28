@@ -63,13 +63,24 @@
 
           let articles = response['articles'];
           for(let i = 0; i < articles.length; i++) {
+//변수를 지정해주기
+var article = articles[i]
+var url_to_image = article['urlToImage']
+var url = article['url']
+var title = article['title']
+var date = article['publishedAt']
+var author = article['author']
+var des = article['description']
+
+
+
             var html = '<div>\
-                          <img src="' + articles[i]['urlToImage'] + '" width = "100%">\
+                          <img src="' + url_to_image + '" width = "100%">\
                           <div class="title-box">\
-                            <a href="' + articles[i]['url'] + ' " target="_blank">' + articles[i]['title'] + '</a>\
-                            <h5>' + articles[i]['publishedAt'] + ' | ' + articles[i]['author']+' </h5> \
+                            <a href="' + url + ' " target="_blank">' + title + '</a>\
+                            <h5>' + date + ' | ' + author+' </h5> \
                         </div> \
-                           <p> ' +articles[i]['description'] + '</p> \
+                           <p> ' + des + '</p> \
                        </div>'
           }
 
