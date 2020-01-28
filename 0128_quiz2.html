@@ -23,22 +23,26 @@
 
     <script>
       function q1() {
-        let tbody = $('#names-q1') //tbody의 이름을 $('#name-q1')으로 저장함
-        tbody.empty(); //먼저 비워줌, tbody을 지우지 않고 저장함        // 여기에 코드를 입력하세요
+        let cycle_tbody = $('#names-q1') //tbody의 이름을 $('#name-q1')으로 저장함
+        cycle_tbody.empty(); //먼저 비워줌, tbody을 지우지 않고 저장함        // 여기에 코드를 입력하세요
         $.ajax({
           type: 'GET',
           url: 'http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/bikeList/1/99',
           data: {},
           success: function(response){
- let row = response['rentBikeStatus']['row'];
+ var row = response['rentBikeStatus']['row'];
  for (let i = 0; i < row.length; i++)
  {
    var name = row[i]['stationName'];
-   var parking = row[i]['rackTotCnt'];
+   var rack = row[i]['rackTotCnt'];
    var bike = row[i]['parkingBikeTotCnt'];
-   var html = '<tr><td>' + name + '</tr></td>'
-   tbody.append(html)
+   var html = '<tr>'\
+        + '<td>' + name + '</td>' \
+        + '<td>' + rack + '</td>' \
+        + '<td>' + bike + '</td>' \
+        + '</tr>'
 
+  cycle_tbody.append(html);
 
  }
 
