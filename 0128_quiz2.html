@@ -19,6 +19,12 @@
         padding: 10px;
         border: 1px solid;
       }
+
+.urgent {
+
+  color: red;
+}
+
     </style>
 
     <script>
@@ -37,11 +43,24 @@
    var rack = row[i]['rackTotCnt'];
    var bike = row[i]['parkingBikeTotCnt'];
 
+   if(bike >= 5) {
   var html = '<tr>\
                 <td>' + name + '</td>\
                 <td>' + rack + '</td>\
                 <td>' + bike + '</td>\
                 </tr>' 
+
+   }
+
+else {
+
+  var html = '<tr>\
+                <td class="urgent">' + name + '</td>\
+                <td class="urgent">' + rack + '</td>\
+                <td class="urgent">' + bike + '</td>\
+                </tr>' 
+
+                }
    //var html = '<tr>'\
    //     + '<td>' + name + '</td>' \
    //     + '<td>' + rack + '</td>' \
