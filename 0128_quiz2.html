@@ -36,11 +36,13 @@
    var name = row[i]['stationName'];
    var rack = row[i]['rackTotCnt'];
    var bike = row[i]['parkingBikeTotCnt'];
-   var html = '<tr>'\
-        + '<td>' + name + '</td>' \
-        + '<td>' + rack + '</td>' \
-        + '<td>' + bike + '</td>' \
-        + '</tr>'
+
+  var html = '<tr>'+'<td>' + name + '</td>' + '<td>' + rack + '</td>' + '<td>' + bike +'</td>' + '</tr>' 
+   //var html = '<tr>'\
+   //     + '<td>' + name + '</td>' \
+   //     + '<td>' + rack + '</td>' \
+   //     + '<td>' + bike + '</td>' \
+    //    + '</tr>'
 
   cycle_tbody.append(html);
 
