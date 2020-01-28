@@ -53,9 +53,21 @@
           return;
         }
 
-        // 여기에 코드를 입력하세요
+        let result = $('#news').val();
 
-      }
+      $.ajax({
+        type: 'GET',
+        url: 'https://newsapi.org/v2/everything?q=' + keyword + '&apiKey=' + '5d6c1a1d4c0d4de1a60bc34087bb8655',
+        data: {},
+        success: function(response){
+
+        
+
+        }
+
+      })
+
+    }
     </script>
 
   </head>
