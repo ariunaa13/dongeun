@@ -193,6 +193,17 @@ function listing() {
         success: function(response){
 
             let orders = response['orders'];
+    var table_form= '<thead>\
+        <tr>\
+            <th> 이름 </th>\
+            <th> 수량 </th>\
+            <th> 주소 </th>\
+            <th> 전화번호 </th>\
+        </tr>\
+    </thead>'
+
+$('#table').append(table_form)
+
             for (let i = 0; i < orders.length; i++) {
 
     var order = orders[i] 
@@ -201,24 +212,13 @@ function listing() {
     var data_name = order['name']
     var data_phone = order['phone']
 
-    var html = '<table class="table">\
-    <thead>\
-        <tr>\
-            <th> 이름 </th>\
-            <th> 수량 </th>\
-            <th> 주소 </th>\
-            <th> 전화번호 </th>\
-        </tr>\
-    </thead>\
-<tbody>\
-        <tr>\
+    var html = ' <tbody><tr>\
             <td> ' + data_name  + ' </td>\
             <td> ' + data_count + ' </td>\
             <td> ' + data_address + ' </td>\
             <td> ' + data_phone + ' </td>\
         </tr>\
-    </tbody>\
-</table>'
+    </tbody>'
 
 $('#table').append(html)
 }
@@ -338,7 +338,7 @@ $('#table').append(html)
 
 
 <table class="table" id = "table">
-    <!--
+<!--
     <thead>
         <tr>
             <th> 이름 </th>
@@ -346,7 +346,7 @@ $('#table').append(html)
             <th> 주소 </th>
             <th> 전화번호 </th>
         </tr>
-    </thead>
+    </thead>  
 
     <tbody>
         <tr>
