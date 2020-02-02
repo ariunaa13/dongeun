@@ -84,8 +84,9 @@
 
         .dropdownbutton{
 
+        
             filter: alpha(opacity=100);
-            opacity: 1.0;
+            opacity: 2.0;
         }
 
         .table {
@@ -175,11 +176,60 @@
             }
 
         }
-//이름 끝//
 
-            
+$(document).ready(function(){
 
-//주소//
+    listing();
+
+});
+
+function listing() {
+
+    $('#table').empty();
+    $.ajax({
+        type: 'GET',
+        url: 'http://spartacodingclub.shop/order',
+        data: {},
+        success: function(response){
+
+            let orders = response['orders'];
+            for (let i = 0; i < orders.length; i++) {
+
+    var order = orders[i] 
+    var data_address = order['address']
+    var data_count = order['count']
+    var data_name = order['name']
+    var data_phone = order['phone']
+
+    var html = '<table class="table">\
+    <thead>\
+        <tr>\
+            <th> 이름 </th>\
+            <th> 수량 </th>\
+            <th> 주소 </th>\
+            <th> 전화번호 </th>\
+        </tr>\
+    </thead>\
+<tbody>\
+        <tr>\
+            <td> ' + data_name  + ' </td>\
+            <td> ' + data_count + ' </td>\
+            <td> ' + data_address + ' </td>\
+            <td> ' + data_phone + ' </td>\
+        </tr>\
+    </tbody>\
+</table>'
+
+$('#table').append(html)
+}
+
+ }
+
+
+    })
+
+}
+
 
 
 </script>
@@ -190,7 +240,7 @@
 <body>
     <div class="main_img">
 
-        <img src="https://wikitravel.org/upload/en/2/23/Us-ca-sanfran-goldengate.jpg" alt="" width="500px" align="center">
+        <img src="https://kr.img.news.koreanair.com/wp-content/uploads/2019/09/NR201909_recommed_SFO_5.png" alt="" width="500px" align="center">
 
     </div>
 
@@ -286,7 +336,9 @@
     <button onclick="blank_check()" class="btn-primary"> 주문하기 </button>
 </div>
 
-<table class="table">
+
+<table class="table" id = "table">
+    <!--
     <thead>
         <tr>
             <th> 이름 </th>
@@ -304,7 +356,7 @@
             <td id="newphone"> </td>
         </tr>
     </tbody>
-
+-->
 
 </table>
 
